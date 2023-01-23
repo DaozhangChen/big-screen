@@ -1,4 +1,10 @@
-@import './helper';
+@import './share/helper';
+
+.headerWrapper {
+
+    height: px(48);
+    background-color: #040f3b;
+}
 
 .wrapper {
     width: px(477);

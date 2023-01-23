@@ -1,11 +1,11 @@
 import s from '@style/App.module.scss'
-import { useEffect } from 'react'
 
 function App() {
-  useEffect(() => {
-  }, [])
   return (
     <div>
+      <header className={s.headerWrapper}>
+        654654lll
+      </header>
       <div className={s.wrapper}></div>
     </div>
   )
