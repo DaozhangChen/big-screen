@@ -1,12 +1,15 @@
-import s from '@style/App.module.scss'
-
+import '@style/App.scss'
+import RadarChart from './charts/radatChart'
 function App() {
   return (
-    <div className={s.wrapper}>
-      <header className={s.headerWrapper}>321
+    <div className="wrapper">
+      <header className="headerWrapper">
+        321
       </header>
-      <div className={s.itemWrapper}>
-        <section>1</section>
+      <div className="itemWrapper">
+        <section>
+          <RadarChart />
+        </section>
         <section>2</section>
         <section>3</section>
         <section>4</section>
