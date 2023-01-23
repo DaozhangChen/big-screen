@@ -2,7 +2,6 @@
 
 .wrapper {
     width: 100vw;
-    height: 100vh;
     display: flex;
     background-color: $mainColor;
     flex-direction: column;
@@ -11,7 +10,6 @@
 
 .headerWrapper {
     width: px(1826);
-    flex-grow: 1;
     height: px(74);
     background-color: $mainColor;
 }
