@@ -1,13 +1,54 @@
 @import './share/helper';
 
+
 .headerWrapper {
 
-    height: px(48);
+    height: px(74);
     background-color: #040f3b;
 }
 
-.wrapper {
-    width: px(477);
-    height: px(323);
-    background-color: black;
+.itemWrapper {
+    display: grid;
+    padding: px(19) px(31) px(75) px(31);
+    grid-template: "a b c" px(323) "d e f" px(240) "d e g"#{px(266)} / #{px(478)} px(763) px(478);
+    background-color: $mainColor;
+    overflow: hidden;
+
+    row-gap: px(15);
+    column-gap: px(20);
+
+    &>section:first-child {
+        grid-area: a;
+        background-color: aqua;
+    }
+
+    &>section:nth-child(2) {
+        grid-area: b;
+        background-color: blueviolet;
+    }
+
+    &>section:nth-child(3) {
+        grid-area: c;
+        background-color: black;
+    }
+
+    &>section:nth-child(4) {
+        grid-area: d;
+        background-color: yellowgreen;
+    }
+
+    &>section:nth-child(5) {
+        grid-area: e;
+        background-color: red;
+    }
+
+    &>section:nth-child(6) {
+        grid-area: f;
+        background-color: pink;
+    }
+
+    &>section:nth-child(7) {
+        grid-area: g;
+        background-color: orange;
+    }
 }
