@@ -1,10 +1,19 @@
 @import './share/helper';
 
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: $mainColor;
+    flex-direction: column;
+    align-items: center;
+}
 
 .headerWrapper {
-
+    width: px(1826);
+    flex-grow: 1;
     height: px(74);
-    background-color: #040f3b;
+    background-color: $mainColor;
 }
 
 .itemWrapper {

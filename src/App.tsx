@@ -3,7 +3,7 @@ import s from '@style/App.module.scss'
 function App() {
   return (
     <div className={s.wrapper}>
-      <header className={s.headerWrapper}>
+      <header className={s.headerWrapper}>321
       </header>
       <div className={s.itemWrapper}>
         <section>1</section>
