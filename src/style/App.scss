@@ -91,7 +91,7 @@
             text-align: center;
 
             & tbody {
-                width: px(465);
+                width: px(461);
                 height: px(210);
                 display: inline-block;
                 overflow: hidden;
@@ -99,6 +99,10 @@
                 &>tr {
                     display: block;
                     width: 100%;
+
+                    &:nth-child(2n) {
+                        background-color: #1d2a42;
+                    }
 
                     &>td {
                         display: inline-block;
