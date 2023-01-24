@@ -40,7 +40,7 @@ const LeftLineChart = () => {
                 name: '福州'
             },
             {
-                data: [620, 1032, 801, 634, 590],
+                data: [620, 1032, 801, 634, 590, 730],
                 type: 'line',
                 smooth: true,
                 name: '泉州'

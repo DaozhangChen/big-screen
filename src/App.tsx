@@ -3,6 +3,8 @@ import FujianMapChart from './charts/fujianMapChart'
 import LeftLeftPieChart from './charts/leftLeftPieChart'
 import LeftLineChart from './charts/leftLineChart'
 import LeftRightPieChart from './charts/leftRightPieChart'
+import MidLeftPieChart from './charts/midLeftPieChart'
+import MidRightPieChart from './charts/midRightPieChart'
 import RadarChart from './charts/radarChart'
 import TableChart from './charts/tableChart'
 function App() {
@@ -31,7 +33,10 @@ function App() {
           </div>
         </section>
         <section>
-          <div></div>
+          <div>
+            <MidLeftPieChart />
+            <MidRightPieChart />
+          </div>
           <div></div>
         </section>
         <section>6</section>

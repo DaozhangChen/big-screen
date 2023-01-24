@@ -121,13 +121,12 @@
         flex-direction: column;
 
         &>div:first-child {
-            height: px(240);
-            flex-shrink: 0;
+            flex: 1 0 0;
             border-bottom: 1px solid #2b758c;
 
             & .leftLineChart {
                 width: px(468);
-                height: px(195);
+                height: px(200);
             }
         }
 
@@ -153,8 +152,29 @@
 
         &>div:first-child {
             flex: 1 0 0;
-            background-color: #54dbf2;
             border-bottom: 1px solid #2b758c;
+            display: flex;
+
+            & .MLPieChartWrapper {
+                flex: 1 0 0;
+                display: flex;
+                flex-direction: column;
+                border-right: 1px solid #2b758c;
+
+                &>div {
+                    flex: 1 0 0;
+                }
+            }
+
+            & .MRPieChartWrapper {
+                flex: 1 0 0;
+                display: flex;
+                flex-direction: column;
+
+                &>div {
+                    flex: 1 0 0;
+                }
+            }
         }
 
         &>div:nth-child(2) {
