@@ -123,6 +123,7 @@
         &>div:first-child {
             height: px(240);
             flex-shrink: 0;
+            border-bottom: 1px solid #2b758c;
 
             & .leftLineChart {
                 width: px(468);
@@ -131,13 +132,35 @@
         }
 
         &>div:nth-child(2) {
-            background-color: bisque;
-            flex: 1 1 0;
+            flex: 1 0 0;
+            display: flex;
+
+            & .LLPieChartWrapper {
+                border-right: 1px solid #2b758c;
+                flex: 1 0 0;
+            }
+
+            & .LRPieChartWrapper {
+                flex: 1 0 0;
+            }
         }
     }
 
     &>section:nth-child(5) {
         grid-area: e;
+        display: flex;
+        flex-direction: column;
+
+        &>div:first-child {
+            flex: 1 0 0;
+            background-color: #54dbf2;
+            border-bottom: 1px solid #2b758c;
+        }
+
+        &>div:nth-child(2) {
+            flex: 1 0 0;
+            background-color: azure;
+        }
     }
 
     &>section:nth-child(6) {

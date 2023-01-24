@@ -28,19 +28,19 @@ const LeftLineChart = () => {
         },
         series: [
             {
-                data: [820, 932, 901, 934, 1290, 1330, 850],
+                data: [820, 932, 901, 934, 1290],
                 type: 'line',
                 smooth: true,
                 name: '厦门'
             },
             {
-                data: [720, 832, 501, 1034, 690, 1230, 920],
+                data: [720, 832, 501, 1034, 690],
                 type: 'line',
                 smooth: true,
                 name: '福州'
             },
             {
-                data: [620, 1032, 801, 634, 590, 730, 1020],
+                data: [620, 1032, 801, 634, 590],
                 type: 'line',
                 smooth: true,
                 name: '泉州'
