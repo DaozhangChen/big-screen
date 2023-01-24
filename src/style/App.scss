@@ -73,6 +73,42 @@
 
     &>section:nth-child(3) {
         grid-area: c;
+
+        & .tableHead {
+            width: px(465);
+            color: white;
+            text-align: center;
+
+            & th {
+                width: 33.33%;
+                height: px(40);
+            }
+        }
+
+        & .tableBody {
+            width: px(465);
+            color: white;
+            text-align: center;
+
+            & tbody {
+                width: px(465);
+                height: px(210);
+                display: inline-block;
+                overflow: hidden;
+
+                &>tr {
+                    display: block;
+                    width: 100%;
+
+                    &>td {
+                        display: inline-block;
+                        width: 33.33%;
+                        height: px(50);
+                        line-height: px(50);
+                    }
+                }
+            }
+        }
     }
 
     &>section:nth-child(4) {

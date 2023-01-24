@@ -1,6 +1,7 @@
 import '@style/App.scss'
 import FujianMapChart from './charts/fujianMapChart'
 import RadarChart from './charts/radarChart'
+import TableChart from './charts/tableChart'
 function App() {
   return (
     <div className="wrapper">
@@ -14,7 +15,9 @@ function App() {
         <section>
           <FujianMapChart />
         </section>
-        <section>3</section>
+        <section>
+          <TableChart />
+        </section>
         <section>4</section>
         <section>5</section>
         <section>6</section>
