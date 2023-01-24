@@ -7,10 +7,24 @@ import { remWidth } from "../helpers/remWidth"
 const FujianMapChart = () => {
     const refDiv = useRef<HTMLDivElement>(null)
     const option: EChartOption = {
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}<br/>人口为 {c} 千人',
+            showContent: true,
+            textStyle: { color: '#666', fontSize: remWidth(20) }
+
+        },
+        title: {
+            text: '福建省人口示例图',
+            right: remWidth(15),
+            top: remWidth(10),
+            textStyle: { color: '#fff', fontSize: remWidth(30), fontStyle: 'italic' }
+        },
         series: [
             {
                 type: 'map',
                 map: 'FuJian',
+                zoom: 1.1,
                 data: [
                     { name: '福州市', value: 8500 },
                     { name: '宁德市', value: 3146 },
@@ -32,8 +46,10 @@ const FujianMapChart = () => {
             calculable: true,
             inRange: { color: ['#13d4fe', '#fea312', '#fe0000'] },
             left: remWidth(10),
-            bottom: remWidth(10)
-
+            bottom: remWidth(15),
+            itemWidth: remWidth(25),
+            itemHeight: remWidth(180),
+            textStyle: { color: '#ffffff', fontSize: remWidth(18) }
         }]
     }
     useEffect(() => {
