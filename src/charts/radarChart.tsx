@@ -1,13 +1,14 @@
 import { useEffect, useRef } from "react"
 import * as echarts from 'echarts'
 import { randomNumber } from "../helpers/randomNumber";
+import { remWidth } from "../helpers/remWidth";
 const RadarChart = () => {
     const refDiv = useRef(null)
     const option: echarts.EChartOption = {
         legend: {
             data: ['one', 'two'],
-            itemWidth: 10,
-            itemHeight: 10,
+            itemWidth: remWidth(20),
+            itemHeight: remWidth(20),
             right: 0,
             orient: 'vertical'
         },
@@ -22,10 +23,11 @@ const RadarChart = () => {
                 { name: '6', max: 100 }
             ],
             radius: "55%",
-            axisNameGap: 5
+            axisNameGap: remWidth(10)
         },
         textStyle: {
-            fontSize: 14,
+            color: '#ffffff',
+            fontSize: remWidth(20),
         },
         series: [
             {
