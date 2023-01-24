@@ -117,6 +117,23 @@
 
     &>section:nth-child(4) {
         grid-area: d;
+        display: flex;
+        flex-direction: column;
+
+        &>div:first-child {
+            height: px(240);
+            flex-shrink: 0;
+
+            & .leftLineChart {
+                width: px(468);
+                height: px(195);
+            }
+        }
+
+        &>div:nth-child(2) {
+            background-color: bisque;
+            flex: 1 1 0;
+        }
     }
 
     &>section:nth-child(5) {

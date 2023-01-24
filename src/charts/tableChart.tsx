@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 import { autoSetInterval } from "../helpers/autoSetInterval"
-import { remWidth } from "../helpers/remWidth"
 
 const TableChart = () => {
     const refTbody = useRef<HTMLTableSectionElement>(null)
