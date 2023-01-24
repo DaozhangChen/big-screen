@@ -64,6 +64,11 @@
 
     &>section:nth-child(2) {
         grid-area: b;
+
+        & .geoChart {
+            width: px(763);
+            height: px(323);
+        }
     }
 
     &>section:nth-child(3) {

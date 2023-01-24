@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 import * as echarts from 'echarts'
+import { randomNumber } from "../helpers/randomNumber";
 const RadarChart = () => {
     const refDiv = useRef(null)
     const option: echarts.EChartOption = {
@@ -13,12 +14,12 @@ const RadarChart = () => {
         radar: {
             // shape: 'circle',
             indicator: [
-                { name: '1', max: 65 },
-                { name: '2', max: 160 },
-                { name: '3', max: 300 },
-                { name: '4', max: 380 },
-                { name: '5', max: 520 },
-                { name: '6', max: 250 }
+                { name: '1', max: 100 },
+                { name: '2', max: 100 },
+                { name: '3', max: 100 },
+                { name: '4', max: 100 },
+                { name: '5', max: 100 },
+                { name: '6', max: 100 }
             ],
             radius: "55%",
             axisNameGap: 5
@@ -35,11 +36,21 @@ const RadarChart = () => {
                 },
                 data: [
                     {
-                        value: [42, 30, 200, 350, 500, 180],
+                        value: [randomNumber(100),
+                        randomNumber(100),
+                        randomNumber(100),
+                        randomNumber(100),
+                        randomNumber(100),
+                        randomNumber(100)],
                         name: 'one',
                     },
                     {
-                        value: [50, 140, 280, 260, 420, 210],
+                        value: [randomNumber(100),
+                        randomNumber(100),
+                        randomNumber(100),
+                        randomNumber(100),
+                        randomNumber(100),
+                        randomNumber(100)],
                         name: 'two'
                     }
                 ],
