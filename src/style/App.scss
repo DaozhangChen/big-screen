@@ -179,7 +179,12 @@
 
         &>div:nth-child(2) {
             flex: 1 0 0;
-            background-color: azure;
+            display: flex;
+            flex-direction: column;
+
+            &>div {
+                flex: 1 0 0;
+            }
         }
     }
 
