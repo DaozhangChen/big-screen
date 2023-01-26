@@ -200,5 +200,11 @@
 
     &>section:nth-child(7) {
         grid-area: g;
+        display: flex;
+        flex-direction: column;
+
+        &>div {
+            flex: 1 0 0;
+        }
     }
 }
