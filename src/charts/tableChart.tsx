@@ -16,7 +16,7 @@ const TableChart = () => {
     return (
         <>
             <div>
-                <h2 className='littleTitle'>标题</h2>
+                <h2 className='littleTitle'>各市人口占比</h2>
                 <table className="tableHead">
                     <thead>
                         <tr>

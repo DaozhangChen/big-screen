@@ -1,12 +1,15 @@
 import { useEffect, useRef } from "react";
 import * as echart from 'echarts'
 import { remWidth } from "../helpers/remWidth";
+import { randomNumber } from "../helpers/randomNumber";
 
 const LeftRightPieChart = () => {
     const refDiv = useRef<HTMLDivElement>(null)
     const option: echart.EChartOption = {
+        color: ['#fe7f4d', '#6fa3fe'],
         tooltip: {
-            trigger: 'item'
+            trigger: 'item',
+            valueFormatter: (value) => Math.floor(value) + '万人'
         },
         legend: {
             bottom: '5%',
@@ -20,7 +23,7 @@ const LeftRightPieChart = () => {
         },
         series: [
             {
-                name: 'Access From',
+                name: '城乡人口比例',
                 type: 'pie',
                 radius: ['45%', '60%'],
                 avoidLabelOverlap: false,
@@ -40,12 +43,9 @@ const LeftRightPieChart = () => {
                     show: false
                 },
                 data: [
-                    { value: 1048, name: '1' },
-                    { value: 735, name: '2' },
-                    { value: 580, name: '3' },
-                    { value: 484, name: '4' },
-                    { value: 300, name: '5' }
-                ]
+                    { value: randomNumber(2700, 2856), name: '城镇人口' },
+                    { value: randomNumber(1000, 1298), name: '农村人口' },
+                ],
             }
         ]
     };
@@ -58,7 +58,7 @@ const LeftRightPieChart = () => {
     }, [])
     return (
         <>
-            <div className="LRPieChartWrapper" ref={refDiv}></div>
+            <div className="LRPieChartWrapper" ref={refDiv} />
         </>
     )
 }

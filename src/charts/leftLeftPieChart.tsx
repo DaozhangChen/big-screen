@@ -2,12 +2,17 @@ import { useEffect, useRef } from "react"
 import * as echart from 'echarts'
 import { EChartOption } from "echarts/lib/echarts";
 import { remWidth } from "../helpers/remWidth";
+import { randomNumber } from "../helpers/randomNumber";
 
 const LeftLeftPieChart = () => {
     const refDiv = useRef<HTMLDivElement>(null)
     const option: EChartOption = {
         tooltip: {
-            trigger: 'item'
+            trigger: 'item',
+            position: function (point) {
+                return [+point[0] + 50, '30%'];
+            },
+            valueFormatter: (value: number) => value + '%'
         },
         legend: {
             bottom: '5%',
@@ -17,11 +22,11 @@ const LeftLeftPieChart = () => {
                 fontSize: remWidth(18)
             },
             itemWidth: remWidth(20),
-            itemHeight: remWidth(20)
+            itemHeight: remWidth(20),
         },
         series: [
             {
-                name: 'Access From',
+                name: '男女人口比例',
                 type: 'pie',
                 radius: ['45%', '60%'],
                 avoidLabelOverlap: false,
@@ -41,11 +46,8 @@ const LeftLeftPieChart = () => {
                     show: false
                 },
                 data: [
-                    { value: 1048, name: '1' },
-                    { value: 735, name: '2' },
-                    { value: 580, name: '3' },
-                    { value: 484, name: '4' },
-                    { value: 300, name: '5' }
+                    { value: 50.89, name: '男性人口' },
+                    { value: 49.11, name: '女性人口' },
                 ]
             }
         ]
@@ -60,7 +62,7 @@ const LeftLeftPieChart = () => {
 
     return (
         <>
-            <div className="LLPieChartWrapper" ref={refDiv}></div>
+            <div className="LLPieChartWrapper" ref={refDiv} />
         </>
     )
 }
