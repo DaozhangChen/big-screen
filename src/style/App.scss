@@ -83,6 +83,18 @@
                 width: 33.33%;
                 height: px(40);
             }
+
+            & th:first-child {
+                color: #247735;
+            }
+
+            & th:nth-child(2) {
+                color: #f6891e;
+            }
+
+            & th:nth-child(3) {
+                color: #06bdbe;
+            }
         }
 
         & .tableBody {
@@ -109,6 +121,18 @@
                         width: 33.33%;
                         height: px(50);
                         line-height: px(50);
+                    }
+
+                    &>td:first-child {
+                        color: #247735;
+                    }
+
+                    &>td:nth-child(2) {
+                        color: #f6891e;
+                    }
+
+                    &>td:nth-child(3) {
+                        color: #06bdbe;
                     }
                 }
             }
