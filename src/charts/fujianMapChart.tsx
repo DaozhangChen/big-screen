@@ -9,7 +9,7 @@ const FujianMapChart = () => {
     const option: EChartOption = {
         tooltip: {
             trigger: 'item',
-            formatter: '{b}<br/>人口为 {c} 千人',
+            formatter: '{b}<br/>人口约为 {c} 千人',
             showContent: true,
             textStyle: { color: '#666', fontSize: remWidth(20) }
 
