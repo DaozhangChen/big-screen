@@ -190,6 +190,12 @@
 
     &>section:nth-child(6) {
         grid-area: f;
+        display: flex;
+        flex-direction: column;
+
+        &>div {
+            flex: 1 0 0;
+        }
     }
 
     &>section:nth-child(7) {

@@ -7,6 +7,7 @@ import MidBarChart from './charts/midBarChart'
 import MidLeftPieChart from './charts/midLeftPieChart'
 import MidRightPieChart from './charts/midRightPieChart'
 import RadarChart from './charts/radarChart'
+import RightMidBarChart from './charts/rightMidBarChart'
 import TableChart from './charts/tableChart'
 function App() {
   return (
@@ -42,7 +43,9 @@ function App() {
             <MidBarChart />
           </div>
         </section>
-        <section>6</section>
+        <section>
+          <RightMidBarChart />
+        </section>
         <section>7</section>
       </div>
     </div>
