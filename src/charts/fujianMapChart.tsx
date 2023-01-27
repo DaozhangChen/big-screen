@@ -54,9 +54,10 @@ const FujianMapChart = () => {
     }
     useEffect(() => {
         if (refDiv.current) {
-            const myChart = echart.init(refDiv.current)
+            var myChart = echart.init(refDiv.current)
             echart.registerMap('FuJian', fujianJson)
             myChart.setOption(option)
+            
         }
     }, [])
     return (
