@@ -1,9 +1,11 @@
 import * as echart from 'echarts'
 import { useEffect, useRef } from 'react';
+import { randomNumber } from '../helpers/randomNumber';
 import { remWidth } from '../helpers/remWidth';
 const MidRightPieChart = () => {
     const refDiv = useRef<HTMLDivElement>(null)
     const option: echart.EChartOption = {
+        color: ['#95e1d3', '#aa96da', '#fce38a', '#f38181'],
         legend: {
             orient: 'vertical',
             left: 'right',
@@ -13,19 +15,22 @@ const MidRightPieChart = () => {
             itemGap: remWidth(10),
             top: '10%'
         },
+        tooltip: {
+            trigger: 'item',
+            valueFormatter: (value: number) => value.toFixed(2) + '%'
+        },
         series: [
             {
                 right: '20%',
                 bottom: '5%',
-                name: 'Access From',
+                name: '婚姻状况构成',
                 type: 'pie',
                 radius: '70%',
                 data: [
-                    { value: 1048, name: '1' },
-                    { value: 735, name: '2' },
-                    { value: 580, name: '3' },
-                    { value: 484, name: '4' },
-                    { value: 300, name: '5' }
+                    { value: randomNumber(18.6, 28.4), name: '未婚' },
+                    { value: randomNumber(63.4, 73.7), name: '已婚' },
+                    { value: randomNumber(0.6, 2.2), name: '离婚' },
+                    { value: randomNumber(5.5, 7.6), name: '丧偶' },
                 ],
                 emphasis: {
                     itemStyle: {
@@ -44,8 +49,8 @@ const MidRightPieChart = () => {
 
     return (
         <div className="MRPieChartWrapper">
-            <h2 className='littleTitle'>标题</h2>
-            <div ref={refDiv}></div>
+            <h2 className='littleTitle'>婚姻状况构成</h2>
+            <div ref={refDiv} />
         </div>
     )
 }

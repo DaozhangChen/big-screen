@@ -2,10 +2,12 @@ import { useEffect, useRef } from "react"
 import * as echart from 'echarts'
 import { EChartOption } from "echarts/lib/echarts";
 import { remWidth } from "../helpers/remWidth";
+import { randomNumber } from "../helpers/randomNumber";
 
 const MidBarChart = () => {
     const refDiv = useRef<HTMLDivElement>(null)
     const option: EChartOption = {
+        color: ['#f6f7d7', '#ff165d'],
         xAxis: {
             type: 'category',
             data: ['2017', '2018', '2019', '2020', '2021'],
@@ -17,8 +19,8 @@ const MidBarChart = () => {
         yAxis: [
             {
                 type: 'value',
-                name: '1',
-                nameGap: remWidth(15),
+                name: '出生率',
+                nameGap: remWidth(20),
                 nameTextStyle: {
                     fontSize: remWidth(18),
                     color: '#fff'
@@ -30,14 +32,15 @@ const MidBarChart = () => {
                 },
                 axisLabel: {
                     fontSize: remWidth(18),
+
                     color: '#fff'
                 }
             },
             {
                 type: 'value',
-                name: '2',
+                name: '自然增长率',
                 splitNumber: 4,
-                nameGap: remWidth(15),
+                nameGap: remWidth(20),
                 nameTextStyle: {
                     fontSize: remWidth(18),
                     color: '#fff'
@@ -53,20 +56,29 @@ const MidBarChart = () => {
         ],
         grid: {
             top: '20%',
+            right: '8%',
             height: remWidth(110),
-            width: remWidth(630)
+            width: remWidth(630),
         },
         series: [
             {
-                name: '1',
-                data: [120, 200, 150, 80, 70],
+                name: '人口出生率',
+                data: [randomNumber(14, 15),
+                randomNumber(13, 15),
+                randomNumber(12, 13),
+                randomNumber(9, 12),
+                randomNumber(8, 9)],
                 type: 'bar',
             },
             {
-                name: '2',
+                name: '人口自然增长率',
                 type: 'line',
                 yAxisIndex: 1,
-                data: [2.0, 2.2, 3.3, 4.5, 6.3],
+                data: [randomNumber(7, 9),
+                randomNumber(7, 8),
+                randomNumber(6, 7),
+                randomNumber(3, 6),
+                randomNumber(2, 3)],
             }
         ]
     };
@@ -78,8 +90,8 @@ const MidBarChart = () => {
     }, [])
     return (
         <>
-            <h2 className='littleTitle'>标题</h2>
-            <div ref={refDiv}></div>
+            <h2 className='littleTitle'>人口出生率与自然增长率</h2>
+            <div ref={refDiv} />
         </>
     )
 }
