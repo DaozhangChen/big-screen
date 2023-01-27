@@ -1,4 +1,5 @@
 import '@style/App.scss'
+import { useEffect, useRef } from 'react'
 import FujianMapChart from './charts/fujianMapChart'
 import LeftLeftPieChart from './charts/leftLeftPieChart'
 import LeftLineChart from './charts/leftLineChart'
@@ -11,6 +12,25 @@ import RightLineChart from './charts/rightLineChart'
 import RightMidBarChart from './charts/rightMidBarChart'
 import TableChart from './charts/tableChart'
 function App() {
+  const debounce = () => {
+    let timer: any
+    return () => {
+      if (timer) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(() => {
+        location.reload()
+        timer = null
+      }, 2000)
+    }
+  }
+  const refDB = useRef(debounce())
+  useEffect(() => {
+    const DB = refDB.current
+    window.addEventListener('resize', () => {
+      DB()
+    })
+  }, [])
   return (
     <div className="wrapper">
       <header className="headerWrapper">
