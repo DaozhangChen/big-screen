@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="wrapper">
       <header className="headerWrapper">
-        <img src="../src/assets/background.png" alt="654" />
+        <img src="/background.png" alt="header" />
       </header>
       <div className="itemWrapper">
         <section>

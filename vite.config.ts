@@ -7,8 +7,20 @@ export default defineConfig({
   resolve: {
     alias: {
       '@style': resolve(__dirname, './src/style')
-
-
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes('echarts')) {
+            return 'echarts';
+          }
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        }
+      }
     }
   },
   plugins: [react()],
