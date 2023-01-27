@@ -2,11 +2,16 @@ import { useEffect, useRef } from "react"
 import * as echart from 'echarts'
 import { EChartOption } from "echarts/lib/echarts";
 import { remWidth } from "../helpers/remWidth";
+import { randomNumber } from "../helpers/randomNumber";
 
 const RightLineChart = () => {
     const refDiv = useRef<HTMLDivElement>(null)
     const option: EChartOption = {
         color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+        tooltip: {
+            trigger: 'axis',
+            valueFormatter: (value: number) => value.toFixed(2) + '万人'
+        },
         grid: {
             left: '3%',
             right: '4%',
@@ -18,7 +23,7 @@ const RightLineChart = () => {
             {
                 type: 'category',
                 boundaryGap: false,
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                data: ['国有单位', '城镇集体单位', '其他单位'],
                 axisLabel: {
                     fontSize: remWidth(18),
                     color: '#fff'
@@ -40,10 +45,13 @@ const RightLineChart = () => {
         ],
         series: [
             {
-                name: 'Line 1',
+                name: '2019',
                 type: 'line',
                 stack: 'Total',
                 smooth: true,
+                emphasis: {
+                    focus: 'series'
+                },
                 lineStyle: {
                     width: 0
                 },
@@ -61,13 +69,16 @@ const RightLineChart = () => {
                         }
                     ])
                 },
-                data: [140, 232, 101, 264, 90, 340, 250]
+                data: [randomNumber(147, 155), randomNumber(9, 11), randomNumber(483, 496)]
             },
             {
-                name: 'Line 2',
+                name: '2020',
                 type: 'line',
                 stack: 'Total',
                 smooth: true,
+                emphasis: {
+                    focus: 'series'
+                },
                 lineStyle: {
                     width: 0
                 },
@@ -85,13 +96,16 @@ const RightLineChart = () => {
                         }
                     ])
                 },
-                data: [120, 282, 111, 234, 220, 340, 310]
+                data: [randomNumber(174, 152), randomNumber(8.85, 9.32), randomNumber(444, 483)]
             },
             {
-                name: 'Line 3',
+                name: '2021',
                 type: 'line',
                 stack: 'Total',
                 smooth: true,
+                emphasis: {
+                    focus: 'series'
+                },
                 lineStyle: {
                     width: 0
                 },
@@ -109,7 +123,7 @@ const RightLineChart = () => {
                         }
                     ])
                 },
-                data: [320, 132, 201, 334, 190, 130, 220]
+                data: [randomNumber(150, 152), randomNumber(8, 9), randomNumber(420, 444)]
             }
         ]
     };
@@ -122,8 +136,8 @@ const RightLineChart = () => {
     }, [])
     return (
         <>
-            <h2 className='littleTitle'>标题</h2>
-            <div ref={refDiv}></div>
+            <h2 className='littleTitle'>非私营单位就业人数</h2>
+            <div ref={refDiv} />
         </>
     )
 }

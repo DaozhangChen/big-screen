@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import * as echart from 'echarts'
 import { EChartOption } from "echarts";
 import { remWidth } from "../helpers/remWidth";
+import { randomNumber } from "../helpers/randomNumber";
 
 const RightMidBarChart = () => {
     const refDiv = useRef<HTMLDivElement>(null)
@@ -13,6 +14,9 @@ const RightMidBarChart = () => {
             height: remWidth(170),
             width: remWidth(400),
             containLabel: true
+        },
+        tooltip: {
+            valueFormatter: (value: number) => value.toFixed(2) + '万人'
         },
         xAxis: {
             type: 'value',
@@ -26,7 +30,7 @@ const RightMidBarChart = () => {
         },
         yAxis: {
             type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+            data: ['2021', '2011', '2001'],
             axisLabel: {
                 fontSize: remWidth(18),
                 color: '#fff'
@@ -34,16 +38,31 @@ const RightMidBarChart = () => {
         },
         series: [
             {
-                name: 'Direct',
+                name: '第一产业',
                 type: 'bar',
+                emphasis: {
+                    focus: 'series'
+                },
                 stack: 'total',
-                data: [320, 302, 301, 334, 390]
+                data: [randomNumber(301, 574), randomNumber(574, 825), randomNumber(825, 850)]
             },
             {
-                name: 'Affiliate Ad',
+                name: '第二产业',
                 type: 'bar',
+                emphasis: {
+                    focus: 'series'
+                },
                 stack: 'total',
-                data: [220, 182, 191, 234, 290]
+                data: [randomNumber(729, 824), randomNumber(453, 824), randomNumber(404, 453)]
+            },
+            {
+                name: '第三产业',
+                type: 'bar',
+                emphasis: {
+                    focus: 'series'
+                },
+                stack: 'total',
+                data: [randomNumber(783, 1167), randomNumber(527, 783), randomNumber(443, 527)]
             },
         ]
     };
@@ -55,8 +74,8 @@ const RightMidBarChart = () => {
     }, [])
     return (
         <>
-            <h2 className='littleTitle'>标题</h2>
-            <div ref={refDiv}></div>
+            <h2 className='littleTitle'>就业人员构成</h2>
+            <div ref={refDiv} />
         </>
     )
 }
