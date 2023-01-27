@@ -15,5 +15,5 @@ export const autoSetInterval = (refTbody: HTMLTableSectionElement, refStartHeigh
             }, 100)
             clearInterval(x)
         }
-    }, 100)
+    }, 50)
 }

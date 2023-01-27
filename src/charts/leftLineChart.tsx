@@ -94,7 +94,7 @@ const LeftLineChart = () => {
             myChart.setOption(option())
             setInterval(() => {
                 myChart.setOption(option())
-            }, 1000)
+            }, 2000)
         }
     }, [])
     return (
