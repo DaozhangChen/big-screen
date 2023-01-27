@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react"
 import * as echart from 'echarts'
 import { EChartOption } from "echarts/lib/echarts";
 import { remWidth } from "../helpers/remWidth";
-import { randomNumber } from "../helpers/randomNumber";
 
 const LeftLeftPieChart = () => {
     const refDiv = useRef<HTMLDivElement>(null)

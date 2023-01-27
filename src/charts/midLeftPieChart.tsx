@@ -9,26 +9,37 @@ const MidLeftPieChart = () => {
         legend: {
             orient: 'vertical',
             left: 'right',
-            textStyle: { color: '#fff', fontSize: remWidth(18) },
+            textStyle: { color: '#fff', fontSize: remWidth(15) },
             itemWidth: remWidth(15),
             itemHeight: remWidth(15),
             itemGap: remWidth(10),
             top: '10%'
         },
+        tooltip: {
+            trigger: 'item',
+            valueFormatter: (value: number) => value + '%'
+        },
         series: [
             {
                 right: '20%',
-                name: 'Access From',
+                name: '各年龄组人口比重',
                 type: 'pie',
-                radius: '35%',
+                radius: '40%',
+                label: {
+                    show: false
+                },
                 data: [
-                    { value: 1048, name: '1' },
-                    { value: 735, name: '2' },
-                    { value: 580, name: '3' },
-                    { value: 484, name: '4' },
-                    { value: 300, name: '5' }
+                    { value: 9.2, name: '0-6岁' },
+                    { value: 11.7, name: '7-15岁' },
+                    { value: 33.1, name: '男（16-59岁）' },
+                    { value: 27.2, name: '女（16-54岁）' },
+                    { value: 7.7, name: '男（60岁及以上）' },
+                    { value: 11.8, name: '女（55岁及以上）' }
                 ],
                 emphasis: {
+                    label: {
+                        show: true
+                    },
                     itemStyle: {
                         shadowColor: 'rgba(0, 0, 0, 0.5)'
                     }

@@ -11,7 +11,12 @@
 .headerWrapper {
     width: px(1826);
     height: px(74);
-    background-color: $mainColor;
+    overflow: hidden;
+
+    &>img {
+        width: px(1820);
+        transform: translateY(-1px);
+    }
 }
 
 .itemWrapper {

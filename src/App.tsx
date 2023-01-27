@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="wrapper">
       <header className="headerWrapper">
-        321
+        <img src="../src/assets/background.png" alt="654" />
       </header>
       <div className="itemWrapper">
         <section>
