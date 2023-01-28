@@ -15,7 +15,7 @@ const RightLineChart = () => {
             },
             grid: {
                 left: '3%',
-                right: '4%',
+                right: '6%',
                 bottom: '3%',
                 height: remWidth(170),
                 containLabel: true
@@ -24,7 +24,7 @@ const RightLineChart = () => {
                 {
                     type: 'category',
                     boundaryGap: false,
-                    data: ['国有单位', '城镇集体单位', '其他单位'],
+                    data: ['国有单位', '城镇集体单位', '其他'],
                     axisLabel: {
                         fontSize: remWidth(18),
                         color: '#fff'
